@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>IMPORMOT - Repuestos de Moto</title>
+    
+    <!-- PWA Meta tags -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#F7E733" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="IMPORMOT" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    
+    <!-- SEO and description -->
+    <link rel="canonical" href="https://impormot.com" />
+    <meta name="description" content="Línea completa de repuestos de moto nacionales e importados. Buscador de compatibilidad avanzado y envíos inmediatos." />
+  </head>
+  <body class="bg-gray-50 text-gray-900 selection:bg-[#F7E733] selection:text-black">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('Service Worker registrado con éxito:', reg.scope))
+            .catch(err => console.error('Error al registrar Service Worker:', err));
+        });
+      }
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,225 @@
+{
+  "users": [
+    {
+      "id": "admin-1",
+      "email": "admin@impormot.com",
+      "passwordHash": "$2b$10$Frrg8xtYh9jvb1/RaFZ/nOtoLtmERdRU9HS4a.x70/9MiVPE1Cp9i",
+      "name": "Administrador",
+      "lastName": "IMPORMOT",
+      "phone": "+54 9 2226524373",
+      "address": "Del Carmen 1073",
+      "city": "Cañuelas",
+      "state": "Buenos Aires",
+      "zipCode": "1814",
+      "role": "admin",
+      "createdAt": "2026-06-20T19:50:19.037Z"
+    },
+    {
+      "id": "user-1",
+      "email": "user@impormot.com",
+      "passwordHash": "$2b$10$Frrg8xtYh9jvb1/RaFZ/nOkgMY4IpKpbZ1d9i.J5Q/BaPD/WBVuYK",
+      "name": "Nahuel",
+      "lastName": "Santos",
+      "phone": "+54 9 11 1234-5678",
+      "address": "Av. del Libertador 4500",
+      "city": "CABA",
+      "state": "Buenos Aires",
+      "zipCode": "1426",
+      "role": "user",
+      "createdAt": "2026-06-20T19:50:19.037Z"
+    },
+    {
+      "id": "user-1781985901779",
+      "email": "santos.nahuel04@gmail.com",
+      "passwordHash": "$2b$10$BZp1U9ALxKqj16qi4HjUXO1HFFh8LAm5jAgvTYj9f2jkM9ejri3PC",
+      "name": "Manuel",
+      "lastName": "Santos",
+      "phone": "2226620721",
+      "address": "Matheu 468",
+      "city": "Cañuelas",
+      "state": "Buenos Aires",
+      "zipCode": "B1814",
+      "role": "admin",
+      "createdAt": "2026-06-20T20:05:01.779Z"
+    }
+  ],
+  "products": [],
+  "brands": [
+    {
+      "id": "1",
+      "name": "Honda",
+      "slug": "honda"
+    },
+    {
+      "id": "2",
+      "name": "Yamaha",
+      "slug": "yamaha"
+    },
+    {
+      "id": "3",
+      "name": "Suzuki",
+      "slug": "suzuki"
+    },
+    {
+      "id": "4",
+      "name": "Kawasaki",
+      "slug": "kawasaki"
+    },
+    {
+      "id": "5",
+      "name": "Bajaj",
+      "slug": "bajaj"
+    },
+    {
+      "id": "6",
+      "name": "KTM",
+      "slug": "ktm"
+    },
+    {
+      "id": "7",
+      "name": "Motomel",
+      "slug": "motomel"
+    },
+    {
+      "id": "8",
+      "name": "Gilera",
+      "slug": "gilera"
+    },
+    {
+      "id": "9",
+      "name": "Corven",
+      "slug": "corven"
+    },
+    {
+      "id": "10",
+      "name": "Zanella",
+      "slug": "zanella"
+    },
+    {
+      "id": "11",
+      "name": "Benelli",
+      "slug": "benelli"
+    },
+    {
+      "id": "12",
+      "name": "CFMoto",
+      "slug": "cfmoto"
+    }
+  ],
+  "partBrands": [
+    {
+      "id": "pb-1",
+      "name": "Yamasida",
+      "slug": "yamasida"
+    },
+    {
+      "id": "pb-2",
+      "name": "Brembo",
+      "slug": "brembo"
+    },
+    {
+      "id": "pb-3",
+      "name": "Motul",
+      "slug": "motul"
+    },
+    {
+      "id": "pb-4",
+      "name": "K&N",
+      "slug": "kn"
+    },
+    {
+      "id": "pb-5",
+      "name": "Akrapovic",
+      "slug": "akrapovic"
+    },
+    {
+      "id": "pb-6",
+      "name": "LS2",
+      "slug": "ls2"
+    },
+    {
+      "id": "pb-7",
+      "name": "Alpinestars",
+      "slug": "alpinestars"
+    },
+    {
+      "id": "pb-8",
+      "name": "Yuasa",
+      "slug": "yuasa"
+    },
+    {
+      "id": "pb-9",
+      "name": "Far",
+      "slug": "far"
+    },
+    {
+      "id": "pb-10",
+      "name": "Positron",
+      "slug": "positron"
+    },
+    {
+      "id": "pb-11",
+      "name": "LED-MOTO",
+      "slug": "led-moto"
+    },
+    {
+      "id": "pb-12",
+      "name": "Promoto",
+      "slug": "promoto"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Repuestos",
+      "slug": "repuestos"
+    },
+    {
+      "id": "2",
+      "name": "Accesorios",
+      "slug": "accesorios"
+    },
+    {
+      "id": "3",
+      "name": "Lubricantes",
+      "slug": "lubricantes"
+    },
+    {
+      "id": "4",
+      "name": "Frenos",
+      "slug": "frenos"
+    },
+    {
+      "id": "5",
+      "name": "Suspensión",
+      "slug": "suspension"
+    },
+    {
+      "id": "6",
+      "name": "Electricidad",
+      "slug": "electricidad"
+    },
+    {
+      "id": "7",
+      "name": "Motor",
+      "slug": "motor"
+    },
+    {
+      "id": "8",
+      "name": "Transmisión",
+      "slug": "transmision"
+    },
+    {
+      "id": "9",
+      "name": "Escape",
+      "slug": "escape"
+    },
+    {
+      "id": "10",
+      "name": "Indumentaria",
+      "slug": "indumentaria"
+    }
+  ],
+  "orders": [],
+  "notifications": []
+}

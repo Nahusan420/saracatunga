@@ -1,0 +1,24 @@
+{
+  "short_name": "IMPORMOT",
+  "name": "IMPORMOT - Repuestos de Moto",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#000000",
+  "theme_color": "#F7E733",
+  "display": "standalone",
+  "orientation": "portrait",
+  "description": "Línea completa de repuestos de moto nacionales e importados. Buscador de compatibilidad avanzado y envíos inmediatos."
+}

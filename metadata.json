@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Remix: IMPORMOT - Repuestos y Accesorios para Motos",
+  "description": "Plataforma e-commerce líder en repuestos, accesorios, lubricantes e indumentaria para todo tipo de motocicletas con buscador de compatibilidad inteligente.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
