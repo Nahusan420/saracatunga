@@ -1,3 +1,4 @@
+import { ProductsRepository } from "./server/repositories/products.repository";
 import dotenv from "dotenv";
 dotenv.config();
 
