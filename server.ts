@@ -360,64 +360,78 @@ async function startServer() {
   // ----------------------------------------------------
 
   // Get Products with Query Parameters for Filtering
-  app.get('/api/products', (req, res) => {
-    try {
-      db = loadDatabase();
-      let filtered = [...db.products];
+  app.get('/api/products', async (req, res) => {
+  try {
 
-      const { search, brand, category, displacement, motoModel } = req.query;
+    const repository = new ProductsRepository();
 
-      if (search) {
-        const q = (search as string).toLowerCase();
-        filtered = filtered.filter(p => 
-          p.name.toLowerCase().includes(q) ||
-          p.sku.toLowerCase().includes(q) ||
-          p.description.toLowerCase().includes(q) ||
-          p.brand.toLowerCase().includes(q) ||
-          p.category.toLowerCase().includes(q) ||
-          p.tags.some(t => t.toLowerCase().includes(q)) ||
-          p.compatibleModels.some(model => model.toLowerCase().includes(q))
-        );
-      }
+    let filtered = await repository.getAll();
 
-      if (brand) {
-        const b = (brand as string).toLowerCase();
-        filtered = filtered.filter(p => 
-          p.brand.toLowerCase() === b || 
-          p.compatibleMotos.some(m => m.toLowerCase() === b)
-        );
-      }
+    const { search, brand, category, displacement, motoModel } = req.query;
 
-      if (category) {
-        const c = (category as string).toLowerCase();
-        filtered = filtered.filter(p => p.category.toLowerCase() === c);
-      }
+    if (search) {
+      const q = (search as string).toLowerCase();
 
-      if (displacement) {
-        const d = (displacement as string).toLowerCase();
-        filtered = filtered.filter(p => p.compatibleDisplacements.some(disp => disp.toLowerCase().includes(d)));
-      }
-
-      if (motoModel) {
-        const mm = (motoModel as string).toLowerCase();
-        filtered = filtered.filter(p => p.compatibleModels.some(model => model.toLowerCase().includes(mm)));
-      }
-
-      res.json(filtered);
-    } catch (err) {
-      res.status(500).json({ error: 'Error obteniendo catálogo de productos.' });
+      filtered = filtered.filter(p =>
+        p.name.toLowerCase().includes(q) ||
+        p.sku.toLowerCase().includes(q) ||
+        p.description.toLowerCase().includes(q) ||
+        p.brand.toLowerCase().includes(q) ||
+        p.category.toLowerCase().includes(q) ||
+        p.tags.some(t => t.toLowerCase().includes(q)) ||
+        p.compatibleModels.some(model => model.toLowerCase().includes(q))
+      );
     }
-  });
 
-  // Get Single Product & Related
-  app.get('/api/products/:id', (req, res) => {
-    try {
-      db = loadDatabase();
-      const product = db.products.find(p => p.id === req.params.id);
+    if (brand) {
+      const b = (brand as string).toLowerCase();
 
-      if (!product) {
-        return res.status(404).json({ error: 'Producto no encontrado.' });
-      }
+      filtered = filtered.filter(p =>
+        p.brand.toLowerCase() === b ||
+        p.compatibleMotos.some(m => m.toLowerCase() === b)
+      );
+    }
+
+    if (category) {
+      const c = (category as string).toLowerCase();
+
+      filtered = filtered.filter(
+        p => p.category.toLowerCase() === c
+      );
+    }
+
+    if (displacement) {
+      const d = (displacement as string).toLowerCase();
+
+      filtered = filtered.filter(p =>
+        p.compatibleDisplacements.some(disp =>
+          disp.toLowerCase().includes(d)
+        )
+      );
+    }
+
+    if (motoModel) {
+      const mm = (motoModel as string).toLowerCase();
+
+      filtered = filtered.filter(p =>
+        p.compatibleModels.some(model =>
+          model.toLowerCase().includes(mm)
+        )
+      );
+    }
+
+    res.json(filtered);
+
+  } catch (err) {
+
+    console.error(err);
+
+    res.status(500).json({
+      error: "Error obteniendo catálogo de productos."
+    });
+
+  }
+});
 
       // Generate up to 4 related products in the same category or brand
       const related = db.products
